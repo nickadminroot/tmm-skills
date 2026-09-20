@@ -8,15 +8,15 @@ a separately published `tmm` CLI release asset; verify the archive checksum and
 
 | Command | Contract |
 | --- | --- |
-| `tmm linkage INPUT --output DIR` | Run free generic linkage analysis and publish the returned artifact tree. |
+| `tmm linkage INPUT --output DIR` | Run free generic linkage analysis and publish the returned artifact tree, including native XMCD and its text preview. |
 | `tmm md MODEL.yaml DOCUMENT.md --format A1\|A2\|A3 --output FILE` | Render a Markdown document and publish the preview. |
 | `tmm render INPUT --output FILE [--scale N \| --target-max-side N]` | Render one Scene v2 input. |
 | `tmm svg INPUT --output FILE [--format svg\|png]` | Publish an SVG or PNG preview. |
-| `tmm xmcd INPUT --output FILE.xmcd [--allow-new-mechanism]` | Run the paid XMCD export; the allowance flag is explicit. |
+| `tmm xmcd INPUT --output FILE.xmcd` | Request the free native Mathcad 15 XMCD output. |
 | `tmm kompas scene MODEL.yaml SCENE --output FILE [--accept-new-mechanism]` | Render one named scene through the local KOMPAS Renderer. |
 | `tmm kompas page MODEL.yaml DOCUMENT.md --page N --format A1\|A2\|A3 --output FILE [--accept-new-mechanism]` | Render one Markdown page through the local renderer. |
 | `tmm mechanisms` | Read the account mechanism balance and registry. |
-| `tmm resume UUID --output PATH` | Resume a permitted free operation or accepted XMCD result. |
+| `tmm resume UUID --output PATH` | Resume a permitted free operation or accepted legacy XMCD result. |
 | `tmm cancel UUID` | Cancel a submitted run when the operation permits it. |
 | `tmm version` | Print the client version. |
 
@@ -51,9 +51,9 @@ different class. Result-expired and result-lost are distinct remote errors.
 - Never log or echo `TMM_API_TOKEN`, Authorization headers, cookies, or signed
   URLs.
 - Keep source YAML and output directories outside the installed skill.
-- Do not call a paid export until the user has explicitly accepted a possible
-  new-mechanism charge.
+- Obtain explicit user consent before passing the paid KOMPAS
+  `--accept-new-mechanism` flag.
 - A successful server admission does not mean a local Renderer completed; inspect
-  the actual result and any same-run resume instruction.
+  the actual result and any same-run resume instruction for KOMPAS operations.
 - The public skill contains no server source, private checkout, or local
   calculation fallback.
