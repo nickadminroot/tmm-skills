@@ -62,7 +62,7 @@ files, and logs. Never paste a token into a diagnostic or an example.
 4. Inspect the returned status and artifacts. Keep the output path outside the
    installed skill directory.
 5. Use `tmm resume UUID --output PATH` only where the returned operation says
-   it is resumable (including accepted legacy XMCD runs). Use the same run;
+   it is resumable (including accepted native-XMCD legacy runs). Use the same run;
    never resubmit a paid operation.
 6. Use `tmm cancel UUID` only for a submitted run that the current contract
    allows to cancel.

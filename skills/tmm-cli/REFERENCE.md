@@ -16,7 +16,7 @@ a separately published `tmm` CLI release asset; verify the archive checksum and
 | `tmm kompas scene MODEL.yaml SCENE --output FILE [--accept-new-mechanism]` | Render one named scene through the local KOMPAS Renderer. |
 | `tmm kompas page MODEL.yaml DOCUMENT.md --page N --format A1\|A2\|A3 --output FILE [--accept-new-mechanism]` | Render one Markdown page through the local renderer. |
 | `tmm mechanisms` | Read the account mechanism balance and registry. |
-| `tmm resume UUID --output PATH` | Resume a permitted free operation or accepted legacy XMCD result. |
+| `tmm resume UUID --output PATH` | Resume a permitted free operation or accepted native-XMCD legacy result. |
 | `tmm cancel UUID` | Cancel a submitted run when the operation permits it. |
 | `tmm version` | Print the client version. |
 
